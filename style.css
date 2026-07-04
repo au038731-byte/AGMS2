@@ -1,0 +1,561 @@
+/* =====================================
+   AGMS v4.0 - Premium Black Theme
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #000000, #111111, #1b1b1b);
+    color: white;
+    min-height: 100vh;
+}
+
+/* Animated Background */
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .08);
+    animation: float 8s ease-in-out infinite;
+}
+
+.c1 {
+    width: 250px;
+    height: 250px;
+    left: 10%;
+    top: 10%;
+}
+
+.c2 {
+    width: 180px;
+    height: 180px;
+    right: 10%;
+    top: 60%;
+}
+
+.c3 {
+    width: 120px;
+    height: 120px;
+    left: 45%;
+    bottom: 10%;
+}
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
+/* Login */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+
+    width: 430px;
+    padding: 40px;
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, .08);
+
+    border: 1px solid rgba(255, 255, 255, .15);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
+
+    text-align: center;
+
+}
+
+.login-box h1 {
+
+    font-size: 42px;
+
+    margin-bottom: 5px;
+
+}
+
+.login-box h2 {
+
+    color: #facc15;
+
+    margin-bottom: 10px;
+
+}
+
+.subtitle {
+
+    color: #ddd;
+
+    margin-bottom: 25px;
+
+}
+
+.login-box input {
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin: 12px 0;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #222;
+
+    color: white;
+
+    font-size: 16px;
+
+}
+
+.login-box input::placeholder {
+
+    color: #aaa;
+
+}
+
+.login-box button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.login-box button:hover {
+
+    background: #1d4ed8;
+
+    transform: scale(1.04);
+
+}
+
+.signup-text {
+
+    margin-top: 20px;
+
+}
+
+.signup-text a {
+
+    color: #facc15;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+.login-box hr {
+
+    margin: 20px 0;
+
+    border: 1px solid rgba(255, 255, 255, .15);
+
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 260px;
+    height: 100%;
+    background: #0d0d0d;
+    border-right: 2px solid #222;
+    padding-top: 20px;
+    box-shadow: 5px 0 20px rgba(0, 0, 0, .5);
+}
+
+.logo {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.logo h2 {
+    color: #facc15;
+    font-size: 30px;
+}
+
+.logo p {
+    color: #999;
+    font-size: 14px;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    margin: 8px 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    transition: .3s;
+    border-left: 4px solid transparent;
+}
+
+.sidebar ul li a:hover {
+    background: #1a1a1a;
+    border-left: 4px solid #facc15;
+    color: #facc15;
+}
+
+/* ==========================
+   MAIN AREA
+========================== */
+
+.main {
+    margin-left: 280px;
+    padding: 30px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    color: #facc15;
+}
+
+/* ==========================
+   DASHBOARD CARDS
+========================== */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #161616;
+    border: 1px solid #2a2a2a;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #facc15;
+}
+
+.card h3 {
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.card h1 {
+    color: #facc15;
+    font-size: 38px;
+}
+
+/* ==========================
+   TABLE
+========================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #161616;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th {
+    background: #222;
+    color: #facc15;
+    padding: 15px;
+}
+
+table td {
+    padding: 15px;
+    border-bottom: 1px solid #2a2a2a;
+    text-align: center;
+    color: white;
+}
+
+table tr:hover {
+    background: #1f1f1f;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: #1d4ed8;
+    transform: scale(1.05);
+}
+
+/* ==========================
+   FORM DESIGN
+========================== */
+
+.form-box {
+    max-width: 700px;
+    margin: auto;
+    background: #161616;
+    border: 1px solid #2a2a2a;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+}
+
+.form-box input,
+.form-box select,
+.form-box textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 12px 0;
+    background: #222;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 10px;
+    outline: none;
+    transition: .3s;
+}
+
+.form-box input:focus,
+.form-box select:focus,
+.form-box textarea:focus {
+    border: 1px solid #facc15;
+    box-shadow: 0 0 10px rgba(250, 204, 21, .4);
+}
+
+.form-box textarea {
+    resize: none;
+}
+
+/* ==========================
+   PROFILE IMAGE
+========================== */
+
+#preview {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 20px auto;
+    border: 4px solid #facc15;
+    background: #222;
+}
+
+/* ==========================
+   PROFILE CARD
+========================== */
+
+.profile-card {
+    max-width: 700px;
+    margin: auto;
+    background: #161616;
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid #2a2a2a;
+    text-align: center;
+}
+
+.profile-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #facc15;
+    margin-bottom: 20px;
+}
+
+.profile-card h2 {
+    color: #facc15;
+    margin-bottom: 15px;
+}
+
+.profile-card p {
+    margin: 10px 0;
+    color: #ddd;
+    font-size: 17px;
+}
+
+/* ==========================
+   SEARCH BOX
+========================== */
+
+.topbar input {
+    width: 320px;
+    padding: 12px 15px;
+    background: #222;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+.topbar input:focus {
+    border-color: #facc15;
+}
+
+/* ==========================
+   STATUS COLORS
+========================== */
+
+.paid {
+    color: #00ff66;
+    font-weight: bold;
+}
+
+.unpaid {
+    color: #ff4444;
+    font-weight: bold;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #facc15;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffd84d;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer {
+    text-align: center;
+    color: #888;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+@media(max-width:768px) {
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .main {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .topbar input {
+        width: 100%;
+    }
+
+    .login-box {
+        width: 90%;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+}
