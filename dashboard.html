@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGMS Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+
+            <h2>🏢 AGMS</h2>
+
+            <p>Andiwaly Group</p>
+
+        </div>
+
+        <ul>
+
+            <li><a href="dashboard.html">🏠 Dashboard</a></li>
+
+            <li><a href="members.html">👥 Members</a></li>
+
+            <li><a href="add-member.html">➕ Add Member</a></li>
+
+            <li><a href="payments.html">💰 Payments</a></li>
+
+            <li><a href="reports.html">📊 Reports</a></li>
+
+            <li><a href="#" onclick="logout()">🚪 Logout</a></li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <div class="topbar">
+
+            <h1>Dashboard</h1>
+
+            <h3 id="adminName"></h3>
+
+        </div>
+
+        <br>
+
+        <!-- Main Cards -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>👥 Total Members</h3>
+
+                <h1 id="totalMembers">0</h1>
+
+            </div>
+
+            <div class="card">
+
+                <h3>🟢 Paid Members</h3>
+
+                <h1 id="paidMembers">0</h1>
+
+            </div>
+
+            <div class="card">
+
+                <h3>🔴 Unpaid Members</h3>
+
+                <h1 id="unpaidMembers">0</h1>
+
+            </div>
+
+            <div class="card">
+
+                <h3>💰 Total Collection</h3>
+
+                <h1 id="collection">Rs. 0</h1>
+
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <!-- Status Cards -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>✅ Paid Status</h3>
+
+                <h1 id="paidStatus">0</h1>
+
+            </div>
+
+            <div class="card">
+
+                <h3>❌ Pending Status</h3>
+
+                <h1 id="pendingStatus">0</h1>
+
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <!-- Recent Members -->
+
+        <h2>👥 Recent Members</h2>
+
+        <table id="recentTable">
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Name</th>
+
+                <th>Amount</th>
+
+                <th>Status</th>
+
+            </tr>
+
+        </table>
+
+        <br><br>
+
+        <!-- Payment History -->
+
+        <h2>💰 Recent Payments</h2>
+
+        <table id="paymentHistory">
+
+            <tr>
+
+                <th>Member</th>
+
+                <th>Fee</th>
+
+                <th>Status</th>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!-- JavaScript -->
+
+    <script src="js/auth.js"></script>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

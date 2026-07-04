@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payments | AGMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <div class="logo">
+
+            <h2>🏢 AGMS</h2>
+
+            <p>Andiwaly Group</p>
+
+        </div>
+
+        <ul>
+
+            <li><a href="dashboard.html">🏠 Dashboard</a></li>
+            <li><a href="members.html">👥 Members</a></li>
+            <li><a href="add-member.html">➕ Add Member</a></li>
+            <li><a href="payments.html">💰 Payments</a></li>
+            <li><a href="reports.html">📊 Reports</a></li>
+            <li><a href="#" onclick="logout()">🚪 Logout</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class="main">
+
+        <div class="topbar">
+
+            <h1>Payment Management</h1>
+
+        </div>
+
+        <br>
+
+        <table id="paymentTable">
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Name</th>
+
+                <th>Fee</th>
+
+                <th>Status</th>
+
+                <th>Action</th>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+    <script src="js/auth.js"></script>
+
+    <script>
+
+        let members = JSON.parse(localStorage.getItem("members")) || [];
+
+        let table = document.getElementById("paymentTable");
+
+        function loadPayments() {
+
+            table.innerHTML = `
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Fee</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+`;
+
+            members.forEach(function (member, index) {
+
+                let color = member.status == "Paid" ? "green" : "red";
+
+                table.innerHTML += `
+
+<tr>
+
+<td>AG${String(index + 1).padStart(3, '0')}</td>
+
+<td>${member.name}</td>
+
+<td>Rs. ${member.amount}</td>
+
+<td style="color:${color};font-weight:bold;">
+${member.status}
+</td>
+
+<td>
+
+<button onclick="togglePayment(${index})">
+
+${member.status == "Paid" ? "Mark Unpaid" : "Mark Paid"}
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+            });
+
+        }
+
+        loadPayments();
+
+        function togglePayment(index) {
+
+            if (members[index].status == "Paid") {
+
+                members[index].status = "Unpaid";
+
+            } else {
+
+                members[index].status = "Paid";
+
+            }
+
+            localStorage.setItem("members", JSON.stringify(members));
+
+            loadPayments();
+
+        }
+
+    </script>
+
+</body>
+
+</html>

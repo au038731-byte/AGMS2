@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reports | AGMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <div class="logo">
+
+            <h2>🏢 AGMS</h2>
+
+            <p>Andiwaly Group</p>
+
+        </div>
+
+        <ul>
+
+            <li><a href="dashboard.html">🏠 Dashboard</a></li>
+            <li><a href="members.html">👥 Members</a></li>
+            <li><a href="add-member.html">➕ Add Member</a></li>
+            <li><a href="payments.html">💰 Payments</a></li>
+            <li><a href="reports.html">📊 Reports</a></li>
+            <li><a href="#" onclick="logout()">🚪 Logout</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class="main">
+
+        <div class="topbar">
+
+            <h1>Reports</h1>
+
+        </div>
+
+        <br>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Total Members</h3>
+
+                <h1 id="total">0</h1>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Paid Members</h3>
+
+                <h1 id="paid">0</h1>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Unpaid Members</h3>
+
+                <h1 id="unpaid">0</h1>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Total Collection</h3>
+
+                <h1 id="collection">Rs.0</h1>
+
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <div class="card">
+
+            <h2>Collection Percentage</h2>
+
+            <h1 id="percentage">0%</h1>
+
+        </div>
+
+    </div>
+
+    <script src="js/auth.js"></script>
+
+    <script>
+
+        let members = JSON.parse(localStorage.getItem("members")) || [];
+
+        let total = members.length;
+        let paid = 0;
+        let unpaid = 0;
+        let collection = 0;
+
+        members.forEach(function (member) {
+
+            if (member.status == "Paid") {
+
+                paid++;
+
+                collection += Number(member.amount);
+
+            } else {
+
+                unpaid++;
+
+            }
+
+        });
+
+        document.getElementById("total").innerHTML = total;
+        document.getElementById("paid").innerHTML = paid;
+        document.getElementById("unpaid").innerHTML = unpaid;
+        document.getElementById("collection").innerHTML = "Rs. " + collection;
+
+        let percent = total == 0 ? 0 : Math.round((paid / total) * 100);
+
+        document.getElementById("percentage").innerHTML = percent + "%";
+
+    </script>
+
+</body>
+
+</html>

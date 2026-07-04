@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members | AGMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <div class="logo">
+            <h2>🏢 AGMS</h2>
+            <p>Andiwaly Group</p>
+        </div>
+
+        <ul>
+            <li><a href="dashboard.html">🏠 Dashboard</a></li>
+            <li><a href="members.html">👥 Members</a></li>
+            <li><a href="add-member.html">➕ Add Member</a></li>
+            <li><a href="payments.html">💰 Payments</a></li>
+            <li><a href="reports.html">📊 Reports</a></li>
+            <li><a href="#" onclick="logout()">🚪 Logout</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <div class="topbar">
+
+            <h1>Members</h1>
+
+            <input type="text" id="search" placeholder="🔍 Search Member..." onkeyup="searchMember()">
+
+        </div>
+
+        <br>
+
+        <a href="add-member.html">
+            <button>Add New Member</button>
+        </a>
+
+        <br><br>
+
+        <table id="memberTable">
+
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/auth.js"></script>
+    <script src="js/members.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Member | AGMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <div class="logo">
+
+            <h2>🏢 AGMS</h2>
+
+            <p>Andiwaly Group</p>
+
+        </div>
+
+        <ul>
+
+            <li><a href="dashboard.html">🏠 Dashboard</a></li>
+
+            <li><a href="members.html">👥 Members</a></li>
+
+            <li><a href="add-member.html">➕ Add Member</a></li>
+
+            <li><a href="payments.html">💰 Payments</a></li>
+
+            <li><a href="reports.html">📊 Reports</a></li>
+
+            <li><a href="#" onclick="logout()">🚪 Logout</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class="main">
+
+        <div class="topbar">
+
+            <h1>Add New Member</h1>
+
+        </div>
+
+        <br>
+
+        <div class="form-box">
+
+            <input type="text" id="name" placeholder="Full Name *">
+
+            <input type="text" id="phone" placeholder="Phone Number (Optional)">
+
+            <input type="email" id="email" placeholder="Email (Optional)">
+
+            <input type="number" id="amount" placeholder="Monthly Fee">
+
+            <select id="status">
+
+                <option value="Paid">Paid</option>
+
+                <option value="Unpaid">Unpaid</option>
+
+            </select>
+
+            <input type="date" id="joinDate">
+
+            <textarea id="notes" placeholder="Notes (Optional)" rows="4"></textarea>
+
+            <button onclick="saveMember()">
+
+                💾 Save Member
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function saveMember() {
+
+            let name = document.getElementById("name").value;
+
+            let phone = document.getElementById("phone").value;
+
+            let email = document.getElementById("email").value;
+
+            let amount = document.getElementById("amount").value;
+
+            let status = document.getElementById("status").value;
+
+            let joinDate = document.getElementById("joinDate").value;
+
+            let notes = document.getElementById("notes").value;
+
+            if (name == "") {
+
+                alert("Member Name is Required!");
+
+                return;
+
+            }
+
+            let members = JSON.parse(localStorage.getItem("members")) || [];
+
+            members.push({
+
+                name: name,
+
+                phone: phone,
+
+                email: email,
+
+                amount: amount,
+
+                status: status,
+
+                joinDate: joinDate,
+
+                notes: notes
+
+            });
+
+            localStorage.setItem("members", JSON.stringify(members));
+
+            alert("Member Added Successfully!");
+
+            window.location.href = "members.html";
+
+        }
+
+    </script>
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>
